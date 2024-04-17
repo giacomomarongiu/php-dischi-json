@@ -7,13 +7,13 @@ $myJsonData = file_get_contents('dischi.json');
 //var_dump($myJsonData);
 
 //Trasformo la stringa in un array associativo di php
-$dischi = json_decode($myJsonData, true);
+//$dischi = json_decode($myJsonData, true);
 
 //La stampo
 //var_dump($dischi) ;
 
 //La riconverto in formato json
-echo json_encode($dischi);
+echo $myJsonData;
 
 //Devo fare questo per farglielo capire
 header('Content-Type: application/json');
