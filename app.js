@@ -4,7 +4,7 @@ createApp({
     data() {
         return {
             //Stringa per la chiamata API
-            myUrl: "dischi.json",
+            myUrl: "api.php",
             //Array vuoto dove inserire i miei file 
             disks: [],
             // Variabile numerica che mi servirà come indice di appoggio

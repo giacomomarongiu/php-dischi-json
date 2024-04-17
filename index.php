@@ -48,8 +48,8 @@
                                 <div class="modal-dialog modal-fullscreen-sm-down">
                                     <div class="modal-content bg-dark bg-opacity-75">
 
-                                        <div class="modal-header bg-dark">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{myModal.title}}</h1>
+                                        <div class="modal-header bg-dark text-center">
+                                            <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="fa-solid fa-music"></i> {{myModal.title}} <i class="fa-solid fa-music"></i></h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
