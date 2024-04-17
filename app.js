@@ -7,6 +7,16 @@ createApp({
             myUrl: "dischi.json",
             //Array vuoto dove inserire i miei file 
             disks: [],
+            // Variabile numerica che mi servirà come indice di appoggio
+            diskActive: 0,
+            myModal: [],
+        }
+    },
+
+    methods: {
+        modalToPrint() {
+            this.myModal = this.disks[this.diskActive];
+            console.log(this.myModal);
         }
     },
 
@@ -18,7 +28,8 @@ createApp({
                 console.log(res);
                 //Aggiundo all'array
                 this.disks = res.data;
-            }).catch((error)=>{
+                console.log(this.disks);
+            }).catch((error) => {
                 console.log(error.message);
             })
     }

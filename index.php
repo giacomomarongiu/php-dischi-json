@@ -16,6 +16,7 @@
 
 <body class="bg-success bg-opacity-75">
     <div id='app'>
+
         <!--Navbar-->
         <header class="">
             <?php include __DIR__ . '/nav.php'; ?>
@@ -24,15 +25,45 @@
         <main class="">
             <div class="container">
                 <div class="row mb-5">
-                    <div class="col-4 gy-5" v-for="disk in disks">
-                        <div class="card h-100 text-white bg-dark bg-opacity-75">
+                    <div class="col-4 gy-5" v-for="(disk, index) in disks">
+                        <div class="card h-100 text-white bg-dark bg-opacity-75"
+                            @click="diskActive=index; this.modalToPrint()">
                             <img :src="disk.poster" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title m-0 fw-bold">{{disk.title}}</h5>
                                 <p class="card-text m-0">Author: {{disk.author}}</p>
                                 <p class="card-text m-0">Year: {{disk.year}}</p>
                                 <p class="card-text m-0">Genre: {{disk.genre}}</p>
+
                             </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success m-1" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                More <i class="fa-solid fa-window-maximize"></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen-sm-down">
+                                    <div class="modal-content bg-dark bg-opacity-75">
+
+                                        <div class="modal-header bg-dark">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{myModal.title}}</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="modal-body bg-dark text-center">
+                                            <img :src="myModal.poster" class="card-img-top mb-2" alt="...">
+                                            <p class="card-text m-0">Author: {{myModal.author}}</p>
+                                            <p class="card-text m-0">Year: {{myModal.year}}</p>
+                                            <p class="card-text m-0">Genre: {{myModal.genre}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
