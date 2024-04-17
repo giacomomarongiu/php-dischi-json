@@ -14,7 +14,7 @@
     <link href='./style.css' rel='stylesheet'>
 </head>
 
-<body>
+<body class="bg-success bg-opacity-75">
     <div id='app'>
         <!--Navbar-->
         <header class="mb-3">
@@ -27,21 +27,24 @@
             </nav>
         </header>
         <!--Creo struttura da stampare in pagina-->
-        <div class="container">
-            <div class="row">
-                <div class="col" v-for="disk in disks">
-                    <div class="card h-100">
-                        <img :src="disk.poster" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{disk.title}}</h5>
-                            <p class="card-text">Author: {{disk.author}}</p>
-                            <p class="card-text">Year: {{disk.year}}</p>
-                            <p class="card-text">Genre: {{disk.genre}}</p>
+        <main class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 gy-5" v-for="disk in disks">
+                        <div class="card h-100 text-white bg-dark bg-opacity-75">
+                            <img :src="disk.poster" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title m-0 fw-bold">{{disk.title}}</h5>
+                                <p class="card-text m-0">Author: {{disk.author}}</p>
+                                <p class="card-text m-0">Year: {{disk.year}}</p>
+                                <p class="card-text m-0">Genre: {{disk.genre}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
+
     </div>
 
 
