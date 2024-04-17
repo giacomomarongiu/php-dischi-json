@@ -17,19 +17,13 @@
 <body class="bg-success bg-opacity-75">
     <div id='app'>
         <!--Navbar-->
-        <header class="mb-3">
-            <nav class="navbar bg-success">
-                <div class="container-fluid justify-content-center">
-                    <a class="navbar-brand fw-bold" href="">
-                        Boolify <i class="fa-brands fa-spotify"></i>
-                    </a>
-                </div>
-            </nav>
+        <header class="">
+            <?php include __DIR__ . '/nav.php'; ?>
         </header>
         <!--Creo struttura da stampare in pagina-->
         <main class="">
             <div class="container">
-                <div class="row">
+                <div class="row mb-5">
                     <div class="col-4 gy-5" v-for="disk in disks">
                         <div class="card h-100 text-white bg-dark bg-opacity-75">
                             <img :src="disk.poster" class="card-img-top" alt="...">
@@ -44,6 +38,13 @@
                 </div>
             </div>
         </main>
+
+
+        <!--footer-->
+        <footer class="">
+            <?php include __DIR__ . '/nav.php'; ?>
+        </footer>
+
 
     </div>
 
